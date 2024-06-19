@@ -26,9 +26,9 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.getLogger("telethon").setLevel(logging.WARNING)
 
-MONGODB_CONNECTION_STRING = "mongodb+srv://ggn:ggn@ggn.upuljx5.mongodb.net/?retryWrites=true&w=majority&appName=ggn"
-OWNER_ID = 123456 # edit this
-LOG_GROUP = -10012345 # edit this
+MONGODB_CONNECTION_STRING = "mongodb+srv://v:v@cluster0.nxixaul.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+OWNER_ID = 1258310642 # edit this
+LOG_GROUP = -1002075422559 # edit this
 
 # MongoDB database name and collection name
 DB_NAME = "authors"
