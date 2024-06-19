@@ -77,7 +77,7 @@ async def copy_message_with_chat_id(client, sender, chat_id, message_id):
         for word, replace_word in replacements.items():
             final_caption = final_caption.replace(word, replace_word)
         
-        caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+        caption = f"{msg.caption}\n\n{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
         
         if msg.media:
             if msg.media == MessageMediaType.VIDEO:
@@ -703,7 +703,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{msg.caption}\n\n{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
                 await send_video_with_chat_id(client, sender, path, caption, duration, hi, wi, thumb_path, upm)
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 if file_n != '':
@@ -737,7 +737,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{msg.caption}\n\n{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
                 await send_document_with_chat_id(client, sender, path, caption, thumb_path, upm)
                     
             os.remove(file)
@@ -889,7 +889,7 @@ async def x(userbot, client, sender, edit_id, msg_link, i, file_n):
                     file = path
 
                 
-                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
+                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
                 await upm.edit("__Uploading photo...__")
 
                 await bot.send_file(sender, path, caption=caption)
@@ -905,7 +905,7 @@ async def x(userbot, client, sender, edit_id, msg_link, i, file_n):
                     file = path
                 thumb_path = await screenshot(file, duration, sender)
                 
-                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
+                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
                 await send_document_with_chat_id(client, sender, path, caption, thumb_path, upm)
             os.remove(file)
             await upm.delete()
@@ -1061,7 +1061,7 @@ async def ggn_new(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{msg.caption}\n\n{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
                 await send_video_with_chat_id(client, sender, path, caption, duration, hi, wi, thumb_path, upm)
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 if file_n != '':
@@ -1095,7 +1095,7 @@ async def ggn_new(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{msg.caption}\n\n{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
                 await send_document_with_chat_id(client, sender, path, caption, thumb_path, upm)
                     
             os.remove(file)
